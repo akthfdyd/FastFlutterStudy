@@ -33,13 +33,14 @@ class _BlogListState extends State<BlogList> {
                 Flexible(
                   child: Text(
                     info.title,
-                    style: TextStyle(fontSize: 18.0),
+                    style: TextStyle(fontSize: 13.0),
                   ),
                 ),
               ],
             ),
             onPressed: () {
               Global.postUrl = info.link;
+              Global.postContent = info.content;
               Navigator.pushNamed(context, "/blogcontent");
             },
           ),
@@ -69,21 +70,21 @@ class _BlogListState extends State<BlogList> {
   Container buildFeaturedImageContainer(BlogPostResponseModel info) {
     if (info.featuredImageUrl != "") {
       return Container(
-        height: 120.0,
+        height: 80.0,
         margin: EdgeInsets.only(right: 20.0, top: 5, bottom: 5),
         child: Container(
           child: Image.network(
             info.featuredImageUrl,
             fit: BoxFit.cover,
           ),
-          width: 120,
+          width: 80,
         ),
       );
     } else {
       return Container(
         margin: EdgeInsets.only(right: 20.0, top: 5, bottom: 5),
         width: 0,
-        height: 120.0,
+        height: 80.0,
       );
     }
   }

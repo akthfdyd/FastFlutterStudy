@@ -54,8 +54,6 @@ class BlogPostResponseModel {
       json['title']['rendered'],
       authorName,
       authorImage,
-//      json['embedded']['author'][0]['name'],
-//      json['embedded']['author'][0]['avatarUrls']['x96'],
       featuredImageUrl,
       json['link'],
       json['content']['rendered'],
