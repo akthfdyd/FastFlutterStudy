@@ -52,7 +52,7 @@ class ServerApi {
   static Future<List<BlogPostResponseModel>> fetchBlogPostResponseModelList(
       Map<String, dynamic> query) async {
     final res =
-        await requestGet('/wp-json/wp/v2/posts?per_page=100&_embed', null);
+        await requestGet('/?rest_route=/wp/v2/posts&per_page=100&_embed', null);
     print(json.decode(res.body));
     return json
         .decode(res.body)
